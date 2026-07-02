@@ -1,0 +1,4 @@
+# Runtime dependencies (mirror of pyproject.toml [project].dependencies).
+# Install editable with the CLI entry point:  pip install -e .
+rembg[cpu]>=2.0.50
+pillow>=9.0

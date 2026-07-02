@@ -1,0 +1,20 @@
+[project]
+name = "fonremover"
+version = "0.1.0"
+description = "Remove image backgrounds (transparent PNG) using rembg / U2-Net"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "rembg[cpu]>=2.0.50",
+    "pillow>=9.0",
+]
+
+[project.scripts]
+fonremover = "fonremover.cli:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

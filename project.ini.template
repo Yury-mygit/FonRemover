@@ -1,0 +1,35 @@
+# project.ini.template — committed to git. Copy to project.ini (gitignored)
+# and fill in real values. Secrets stay as <> here.
+# Inline `//` comments are NOT valid INI — keep comments on their own line (§5b.2).
+
+# Playbook repo (shared across projects; read first every session)
+playbook = git@github.com:Yury-mygit/ai-agent-playbook.git
+
+[target]
+# writing code | design
+target = writing code
+
+[project]
+name        = FonRemover
+task        = null
+description = CLI tool to remove image backgrounds (transparent PNG) via rembg
+
+[git]
+# push_enable is the only mandatory methodology field (§5b.4).
+push_enable = true
+# Code repo (this project). One-repo layout: code + docs together.
+git_repo = git@github.com:Yury-mygit/FonRemover.git
+# Context repo (docs). Same repo here — one-repo layout.
+context_repo = git@github.com:Yury-mygit/FonRemover.git
+
+[stack]
+build = pip install -e .
+lint  = fonremover --help
+smoke = fonremover samples/example.png  (produces a transparent PNG)
+
+[Terms]
+# rembg = local background-removal library (U2-Net / ONNX)
+# alpha = image transparency channel; PNG output carries it
+
+[instructions]
+# Extra docs/repos to read before work. None yet.
